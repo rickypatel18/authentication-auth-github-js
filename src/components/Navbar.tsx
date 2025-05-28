@@ -17,12 +17,6 @@ const Navbar = () => {
         <div className="flex items-center gap-5 text-black">
           {session?.user ? (
             <>
-              <button
-                onClick={() => signOut({ redirect: false })}
-                className="cursor-pointer"
-              >
-                Logout
-              </button>
               <div className="flex items-center gap-2 text-sm text-blue-500">
                 {session.user.image && (
                   <Image
@@ -36,6 +30,12 @@ const Navbar = () => {
                 )}
                 <span>{session.user.name || "User"}</span>
               </div>
+              <button
+                onClick={() => signOut({ redirect: false })}
+                className="cursor-pointer bg-[red]"
+              >
+                Logout
+              </button>
             </>
           ) : (
             <button
